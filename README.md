@@ -40,34 +40,34 @@
   - Technically, < em >Hello!</ em > is an element.
   ### 1.7- Breaks and empty elements
   - Browser Collapse all witespaces together, So we don't see the line breaks we put on it.
-  - Whitespace includes spaces, tabs, and line breaks. When the browser displays an HTML file, it treats a run of whitespace as a single space character. In order to create a line break that will show up in the browser, use the < br > tag.
+  - Whitespace includes spaces, tabs, and line breaks. When the browser displays an HTML file, it treats a run of whitespace as a single space character. In order to create a line break that will show up in the browser, use the <code> br </code> tag.
   ### 1.8- Paragraphs
   - we use Paragraphs to markup all of Paragraphs.
   - using paragraph tags instead line break to tell the browser about the structure of our text.
   ### 1.9- Lots of elements
-  - sub and sup stand for "subscript" and "superscript". Originally, HTML started out as a tool for scientific and academic work; and these are really useful for science and math, like writing x2+3x+4 = 1 or chemical formulas like H2O.
+  - <code>sub</code>  and <code>sup</code> stand for "subscript" and "superscript". Originally, HTML started out as a tool for scientific and academic work; and these are really useful for science and math, like writing x2+3x+4 = 1 or chemical formulas like H2O.
   ### 1.10- Nested elements
   - Element can be inside other element.
-  - Html can't be Overlap like this
+  - Html can't be Overlap like this:
   ```
   <em> Text <sup> Text </em> text </sup>
   ```
   ### 1.11- Block and inline
-  - p is a block element, which means the browser creates a box around it. It also generates a margin around this box, to visually separate the paragraph from surrounding elements.
-  - br is an inline element that just creates a line break. It doesn't have a box around it and doesn't create any margin.
+  - <code>p</code> is a block element, which means the browser creates a box around it. It also generates a margin around this box, to visually separate the paragraph from surrounding elements.
+  - <code>br</code> is an inline element that just creates a line break. It doesn't have a box around it and doesn't create any margin.
   - [Block Elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements#Elements).
   - [Inline Elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements#Elements)
   ### 1.12- Practice — The div element
-  - The div is short for division, because that's what this element is for—you can use it to divide up the page into different sections.
-  - Like the paragraph p element, the division div element has an invisible box around it—and just like p, it can have a border, a margin, a width, a height, and so on.
-  - But a p element is specifically meant to contain text. In contrast, the div element is a generic container for whatever other elements you might want to put inside. You can use the div element to organize the content and divide the page into sections.
+  - The <code>div</code> is short for division, because that's what this element is for—you can use it to divide up the page into different sections.
+  - Like the paragraph <code>p</code> element, the division <code>div</code> element has an invisible box around it—and just like <code>p</code>, it can have a border, a margin, a width, a height, and so on.
+  - But a <code>p</code> element is specifically meant to contain text. In contrast, the <code>div</code> element is a generic container for whatever other elements you might want to put inside. You can use the div element to organize the content and divide the page into sections.
   ### 1.13- Lists and implied close tags
   - The default display of an unordered list (ul) uses bullet points. The default display of an ordered list (ol) uses numbers.
-  - li can be only occur inside ol or ul tags. so that li is an element for which the closing tag is optional.
-  - when browser see li opening tag it knows that the previous li must be done, so the closing tag is optional.
-  - But ul and ol tags must have closing tag.
-  - if we leave off the closing </ ol > or </ ul >, then the browser will not know when our list ends! It will simply treat everything that comes after that point as part of the list
-  - The p element is another example of an element for which the closing tag is optional.
+  - <code>li</code> can be only occur inside <code>ol</code> or <code>ul</code> tags. so that li is an element for which the closing tag is optional.
+  - when browser see <code>li</code> opening tag it knows that the previous <code>li</code> must be done, so the closing tag is optional.
+  - But <code>ul</code> and <code>ol</code> tags must have closing tag.
+  - if we leave off the closing <code>ol</code> or <code> ul </code>, then the browser will not know when our list ends! It will simply treat everything that comes after that point as part of the list
+  - The <code>p</code> element is another example of an element for which the closing tag is optional.
   - when you leave off an optional closing tag, it is still implied—that is, the browser will figure out where the element should be closed, even though you didn't explicitly tell it.
 
   ### 1.14- Nested lists
@@ -104,9 +104,9 @@
   </p>
   ```
   ### 1.16- Practice — Implied close tags
-  - Without the closing</p> tag, the browser will still close the element automatically—but not until it sees the next p element starting. So all of the text up until that point gets included in the contents of the blue p element.
-  - With li and p, the browser can figure out where to close the element. But with an element like strong, there's no way for the browser to know where you want the emphasis to stop!
-  - The br element is a void element— it doesn't have any contents (unlike p, which does have contents!).
+  - Without the closing <code>p</code> tag, the browser will still close the element automatically—but not until it sees the next <code>p</code> element starting. So all of the text up until that point gets included in the contents of the blue p element.
+  - With <code>li</code> and <code>p</code>, the browser can figure out where to close the element. But with an element like strong, there's no way for the browser to know where you want the emphasis to stop!
+  - The <code>br</code> element is a void element— it doesn't have any contents (unlike <code>p</code>, which does have contents!).
   ### 1.17- Web addresses
   - URL: Uniform Resource Locator.
     - Uniform: Standerized
@@ -120,20 +120,21 @@
     - / -> file path.
     -  When you're linking to the top page (or home page) of a site, the URL does not need a file path after the domain name.
     - If we look at the URL for a file on your local system, we must give the file path instead of domain.
-  ### 1.18- Links and the <a> tag
+  ### 1.18- Links and the <code>a</code> tag
   - The web is based on the idea of hypertext.
-  - <a href="http://example.net/stuff.html">Example Page</a>: anchor element
+  - ```<a href="http://example.net/stuff.html">Example Page</a>```: anchor element
     - href="http://example.net": hypertext reference attribute
     - The Example Page: contents (what the user actually clicks on)
-    - </a>: closing anchor tag
+    - </ a >: closing anchor tag
   ### 1.19- Adding images
-  - ```<img src="https://fakeurl.example.net/fish.png" alt="Fish">:```
-    - src -> url of the image file(it doesn't copy the file it just tell the browser where   to find it)
-    - alt -> description of the image, (displayed if the file is missing or the user's network connection stops before the image is loaded or if the user can't see the image for instance if they are blind).
+  - ```<img src="https://fakeurl.example.net/fish.png" alt="Fish">```:
+    - <code>src</code> -> url of the image file(it doesn't copy the file it just tell the browser where   to find it)
+    - <code>alt</code> -> description of the image, (displayed if the file is missing or the user's network connection stops before the image is loaded or if the user can't see the image for instance if they are blind).
     - empty element -> No closes tag.
-  - To create an image that is a link, put an img element between the open and close tags of an a element, for instance:
-
+  - To create an image that is a link, put an img element between the open and close tags of an <code>a</code> element.
+  - for instance:
   ```<a href="https://google.com"><img src="glogo.png" alt="Google!"></a>```
+  
   ### 1.20- Files and relative URLs
   - Relative URLs Is a url that has the path of the file in the local computer
   - a url without :// the browser will treat it as a relative url and look for it as s file inside the computer.
@@ -172,7 +173,7 @@
 
   ### 2.1- Starting with style
   - CSS -> cascading style sheet.
-  - language fo descriping the visual appearance of the web pages, including properites such as layout, colors and fonts.
+  - language for descriping the visual appearance of the web pages, including properites such as layout, colors and fonts.
   ### 2.2- Developer tools
   - Developer Tools makes this representation look like HTML, because that's a convenient way for web developers to see what's going on in the page. But the view that you see in Elements is actually a picture of the way the browser thinks about the page internally — not just a copy of the original HTML file.
   - **Google Chrome**: Open the Chrome menu at the top right of the browser window (the three vertical dots), select and select Tools > Developer Tools, OR
@@ -211,16 +212,16 @@
   - There are two rulesets here. Each one has a selector and a block of rules.
   - The selector occurs at the start of each ruleset, and describes what elements the ruleset will be applied to.
   ```
-  li {
-      color: green;
-      margin:20px;
-  }
+		li {
+				color: green;
+				margin:20px;
+		}
   ```
-  - li -> selector
-  - color: green; -> declaration / rule 
-  - {color: green;margin:20px;} -> declaration block
-  - color: -> property
-  - green; -> value
+  - <code>li</code> -> selector
+  - <code>color: green;</code> -> declaration / rule 
+  - <code>{color: green;margin:20px;}</code> -> declaration block
+  - <code>color:</code> -> property
+  - <code>green;</code> -> value
   ### 2.11- Selectors: Type
   - Type selectors are written using just the type name.
   ### 2.12- Selectors: Class and ID
@@ -232,14 +233,14 @@
   - The term "cascading" in Cascading Style Sheets refers to the way that style properties "cascade" down the DOM tree, starting at the top. A style applied to the body element will affect the entire document. A style applied to a lower-level element will affect that element and all its descendants.
   - A style applied at a lower level can override a style at a higher level. For instance, if the body has color: red but a paragraph within the body has color: blue, the blue will apply to that paragraph and to any elements inside it:
   ```
-  <style>
-      body { color: red; }
-      p { color: blue; }
-  </style>
-  <body>
-      <p> This will be blue, not red. <br>
-          <em> Same with this. </em> </p>
-  </body>
+		<style>
+				body { color: red; }
+				p { color: blue; }
+		</style>
+		<body>
+				<p> This will be blue, not red. <br>
+						<em> Same with this. </em> </p>
+		</body>
   ```
   ### 2.15- Units
   - CSS allows you to specify heights (and other distances) using inches or centimeters, but a yard (36 inches) is a much larger unit than we usually use on the web.
@@ -248,16 +249,16 @@
   ### 2.16- Boxs
   - Each element is inside a box.
   ```
-  <style>
-    .blue_box {
-      border: 10px solid blue;
-      padding: 0.5em;
-      width: 150px;
-      height: 100px;
-    }
-  </style>
+		<style>
+			.blue_box {
+				border: 10px solid blue;
+				padding: 0.5em;
+				width: 150px;
+				height: 100px;
+			}
+		</style>
 
-  <div class="blue_box">Hooray, a box!</div>
+		<div class="blue_box">Hooray, a box!</div>
   ```
   ### 2.17- Percentages
   - The width property only changes the width of the contents. The padding, border, and margin are not included in the width (so they add extra width around the sides of the box!).
@@ -267,7 +268,7 @@
   ### 2.19- Separating style
   - Linking stylesheets: To link to a stylesheet in your HTML file, add a link element to the head of the HTML file. The syntax for the link element is just like this:
   ```
-  <link rel="stylesheet" href="style.css">
+  	<link rel="stylesheet" href="style.css">
   ```
   - If you are linking to a stylesheet located on another web server, you will use a full URL in the href attribute. If you're linking to one that's in the same directory as your HTML file, you can just use the filename as a relative URL.
   ### 2.20- Color
@@ -289,10 +290,10 @@
   ### 2.23- Practice — Fonts
   - We can style fonts using a bunch of separate declarations, like this:
   ```
-  font-weight: bold;
-  font-style: italic;
-  font-size: 14pt;
-  text-decoration: underline;
+		font-weight: bold;
+		font-style: italic;
+		font-size: 14pt;
+		text-decoration: underline;
   ```
   - Or we can combine all of this styling info into one declaration, by using the short-hand font property. This can be very convenient!
   - What's not so convenient is that the values for the font property have to be in a certain specific order or they won't work. This is a great example of why it's important to get comfortable looking things up in the documentation.
@@ -305,47 +306,47 @@
   - There are a couple of reasons for this.
   - The historical reason is that HTML was created before CSS, but the engineers who designed CSS wanted it to provide more customization than HTML alone did. The default way to show emphasis is by styling it as italic. But we don't have to do it that way — we can use CSS to override the default styles. For example, we could say that we want emphasized text to be red, or in a larger font size.
   - But the differences go deeper than that. HTML code isn't only used by browsers that display on the screen. It's also used by search engines, smart speaker apps, and other programs. Those programs can't see "boldface" or "italics", but they still need to know which text on a page is more important.
-  - The em and strong elements specify the meaning of their contents. In contrast, the CSS style properties are just specifying the visual appearance.
+  - The <code>em</code> and <code>strong</code> elements specify the meaning of their contents. In contrast, the CSS style properties are just specifying the visual appearance.
   - To repeat this in more general terms: the HTML indicates what the contents mean, while the CSS indicates how the contents should look. Web programmers refer to this as semantic markup — using markup to indicate meaning, not just appearance.
-  - For example, if we place some text inside an em element, this is our way of indicating that this text should be emphasized in some way. But to a program that's reading the page aloud to the user, it won't use italics; it will use tone of voice. And even in a page that _is_ displayed to the user, you might want it to be emphasized using color or another property, instead of with italics.
+  - For example, if we place some text inside an <code>em</code> element, this is our way of indicating that this text should be emphasized in some way. But to a program that's reading the page aloud to the user, it won't use italics; it will use tone of voice. And even in a page that _is_ displayed to the user, you might want it to be emphasized using color or another property, instead of with italics.
   ### 2.25- Practice — Containers
   ```
-  <style>
-  .box{
-    width: 100px;
-    height: 100px;
-    text-align: center;
-    font-size: 30px;
-    font-weight: bold;
-    font-family: sans-serif;
-    float: right;
-  }
-  </style>
-  <div class="box red">red</div>
-  <div class="box green">green</div>
-  <div class="box yellow">yellow</div>
+		<style>
+		.box{
+			width: 100px;
+			height: 100px;
+			text-align: center;
+			font-size: 30px;
+			font-weight: bold;
+			font-family: sans-serif;
+			float: right;
+		}
+		</style>
+		<div class="box red">red</div>
+		<div class="box green">green</div>
+		<div class="box yellow">yellow</div>
   ```
   - Each box gets floated individually, which causes them to line up in a horizontal row rather than staying in a vertical stack.
-  - behavior changes if we first put the three boxes inside a container div.
+  - behavior changes if we first put the three boxes inside a container <code>div</code>.
   ```
-  <style>
-  .box{
-    width: 100px;
-    height: 100px;
-    text-align: center;
-    font-size: 30px;
-    font-weight: bold;
-    font-family: sans-serif;
-  }
-  .container{
-      float: right;
-  }
-  </style>
-      <div class="container">
-        <div class="box red">red</div>
-        <div class="box green">green</div>
-        <div class="box yellow">yellow</div>
-      </div>
+		<style>
+		.box{
+			width: 100px;
+			height: 100px;
+			text-align: center;
+			font-size: 30px;
+			font-weight: bold;
+			font-family: sans-serif;
+		}
+		.container{
+				float: right;
+		}
+		</style>
+		<div class="container">
+			<div class="box red">red</div>
+			<div class="box green">green</div>
+			<div class="box yellow">yellow</div>
+		</div>
   ```
   ### 2.26- flexbox
   - [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox)
@@ -353,49 +354,49 @@
   - When using flexbox, it's important to understand how the size of the container element affects the layout of the boxes that are inside of it.
   ### 2.28- Replicating a design
   ```
-  /* CSS  */
-  ul{
-    display: flex;
-    flex-wrap: wrap;
-    width: 335px;
-    padding: 5px;
-  }
+		/* CSS  */
+		ul{
+			display: flex;
+			flex-wrap: wrap;
+			width: 335px;
+			padding: 5px;
+		}
 
-  li{
-    width: 95px;
-    height: 95px;
-    list-style: none;
-    text-align: center;
-    background-color: #89c9ff;
-    margin: 5px;
-    font: bold 80px sans-serif;
-    border: 1px solid #000
-  }
+		li{
+			width: 95px;
+			height: 95px;
+			list-style: none;
+			text-align: center;
+			background-color: #89c9ff;
+			margin: 5px;
+			font: bold 80px sans-serif;
+			border: 1px solid #000
+		}
   ```
 
   ```
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-      <title>Tic Tac Toes</title>
-      <link rel="stylesheet" href="tictactoe.css">
-  </head>
-  <body>
-      <ul>
-          <li>X
-          <li>
-          <li>O
+		<!DOCTYPE html>
+		<html lang="en">
+		<head>
+				<title>Tic Tac Toes</title>
+				<link rel="stylesheet" href="tictactoe.css">
+		</head>
+		<body>
+				<ul>
+						<li>X
+						<li>
+						<li>O
 
-          <li>
-          <li>X
-          <li>O
+						<li>
+						<li>X
+						<li>O
 
-          <li>X
-          <li>O
-          <li>
-      </ul>
-  </body>
-  </html>
+						<li>X
+						<li>O
+						<li>
+				</ul>
+		</body>
+		</html>
   ```
 
 </details>
@@ -410,21 +411,21 @@
   ### 3.2- Drawing with turtles 
   - turtles: A data object that knows how to draw lines on the screen.
   ```
-  import turtle
-  fred = turtle.Turtle()
-  fred.color("red")
-  fred.forward(100)
-  fred.right(135)
-  fred.forward(140)
-  fred.right(135)
-  fred.forward(100)
+		import turtle
+		fred = turtle.Turtle()
+		fred.color("red")
+		fred.forward(100)
+		fred.right(135)
+		fred.forward(140)
+		fred.right(135)
+		fred.forward(100)
   ```
   ### 3.3- Variables
   - variable: A connection between a name in the code and some data in the computer’s memory.
-  - assignment statement: fred = turtle.Turtle()
-  - fred: gives the name of the variable
-  - =: takes the thing on the right and assigns it to the name on the left
-  - turtle.Turtle(): creates a new turtle data object in memory
+  - assignment statement: <code>fred = turtle.Turtle()</code>
+  - <code>fred</code>: gives the name of the variable
+  - <code>=</code>: takes the thing on the right and assigns it to the name on the left
+  - <code>turtle.Turtle()</code>: creates a new turtle data object in memory
   ### 3.4- Changing colors
   - colors in turtle code is a string.
   - Strings in Python code always appear in quotes. The string "123" is different from the number 123.
@@ -440,9 +441,9 @@
   - A module: is a file with some useful code, which we can import into our program.
   - A method: is a named block of code that can be called to get the module to do something.
   - The import turtle statement: tells Python that you want to use the turtle module in your code.
-  - amy.forward(100): We're calling the <code>forward</code> method on a <code>Turtle</code> object named <code>amy</code>, and giving it the input <code>100</code>.
+  - <code>amy.forward(100)</code>: We're calling the <code>forward</code> method on a <code>Turtle</code> object named <code>amy</code>, and giving it the input <code>100</code>.
   ### 3.8- Comments
-  - a comment is a message for human readers. The computer ignores comments when running the code. In Python, a comment line begins with #.
+  - a comment is a message for human readers. The computer ignores comments when running the code. In Python, a comment line begins with <code>#</code>.
   - Comments can help make your program a lot easier to understand. 
   - Comments can also be a handy tool for experimenting with your code. If you want to temporarily "turn off" some code so that it doesn't run.
   - <code>amy.penup()</code> : Deactivate the pen so that the turtle stops drawing when moving.
@@ -453,9 +454,7 @@
   ### 3.10- Using variables
   Being able to assign a value to a variable <code>favorite_color = "cyan" </code>
   ... and then use this variable to do stuff elsewhere in your code ...
-  <code>
-  mary.color(favorite_color)
-  </code>... is an important skill to have as a programmer! So let's get some practice with the syntax.
+  <code>mary.color(favorite_color)</code>... is an important skill to have as a programmer!.
   - <code>blah = "purple"</code>: is a bad name because it makes the program harder for human beings to understand.
   - you can assign all sorts of other things to variables too, like lists and integers.
   ### 3.11- Looping
@@ -566,9 +565,9 @@
       mai.hideturtle()
   ```
   ### 3.20- Review
-  - A method call asks an object, such as a turtle, to perform some action, such as moving forward. A method call can take additional inputs, such as the number 90 here.
+  - A method call asks an object, such as a turtle, to perform some action, such as moving forward. A method call can take additional inputs.
   - Quotes are how we indicate a string value in Python.
-  - NameError is a really common error message from Python, and it means that the code tried to use a variable before defining it. For instance, matthew.right(45) will give a NameError if you don't have a turtle named matthew yet.
+  - NameError is a really common error message from Python, and it means that the code tried to use a variable before defining it. For instance, <code>matthew.right(45)</code> will give a NameError if you don't have a turtle named matthew yet.
 
 </details>
 
