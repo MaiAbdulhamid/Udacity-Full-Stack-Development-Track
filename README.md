@@ -1,8 +1,8 @@
 # Udacity-Full-Stack Development Track
  
-## Milestone 1 -
+## Milestone 1 - HTML, CSS
 <details>
-  <summary> Intro to HTML: </summary>
+  <summary>Intro to HTML: </summary>
 
   ### 1.1- Intoduction
   - The web is a collection of documents written in html.
@@ -402,7 +402,7 @@
 </details>
 
 
-## Milestone 2 - Intro to Python
+## Milestone 2 - Python
 <details>
 	<summary>Lesson 1: Turtles and Code</summary>
 
