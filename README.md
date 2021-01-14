@@ -573,8 +573,74 @@
 
 <details>
 	<summary>Lesson 2: functions, part One</summary>
+  
+  ### Statements
+  - There are two kinds of Statements
+    - Simple Statements
+    - compound Statements
+  - Simple Statements:
+    - <code>sides = 12</code>: Assignment Statement.
+    - <code>import turtle</code>: import Statement.
+    - <code>mary.color("purple")</code>: Method call Statement.
+  - Compound Statements Controls:
+    - **Whether** the code runs.
+    - **When** the code runs.
+    - **How many** times the code runs.
+  - Control Flow: is the order in which statements are executed in a piece of code.
+  - The default control flow is from top the bottom.
+  - Compound Statements change the default control flow.
+  ### The range function
+  - the best programmers write fewer lines of code rather than more.
+  - The list <code>[0, 1, 2, 3, 4, 5, 6]</code> has seven items, so we'll write <code>range(7)</code> instead.
+  ### Crunching numbers (1/2)
+  - Expression: Is apiece of code that resolves to some values.
+  - <code>5 + 9 * 2</code> -> Expression.
+  - <code>+, * </code> -> Operators.
+  - <code>5, 9, 2</code> -> Operands.
+  - Some Usage for Expressions:
+  ```
+    howard = turtle.Turtle()
+    for side in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]:
+      howard.forward(side * 10)
+      howard.right(90 - side)
+  ```
+  - Dividing 360 by <code>sides</code> will give the correct turning angle for any number of sides.
+  ```
+    sides = 5
+    length = 100
+    t = turtle.Turtle()
+    t.color("orange")
+    for side in range(sides):
+        t.forward(length)
+        t.right(360 / sides)
+  ```
+  ### Crunching numbers (2/2)
+  - to drow This shape:
+  
+  <p><img src="https://video.udacity-data.com/topher/2018/March/5ab5dd13_spirangle/spirangle.png"/></p>
+  
+  ```
+  import turtle
+  t = turtle.Turtle()
+  t.color("cyan")
 
-
+  for side in range(19):
+      t.forward(side*10)
+      t.right(120)
+  ```
+  ### What's a function? (1/2)
+  - A function is a block of code that has a name, but that doesn't run until we tell it to.
+  - We can tell a function to run by <em>calling</em> that function.
+  - To <em>call</em> a function, use the name of the function, followed by parentheses (as in <code>range(5)</code>).
+  - **Callable** code: is the code that will only run when a call statement is used.
+  -  A function call like range(100) do:
+    - Runs the code in the function.
+    - Passes <em>input</em> to the function.
+    - Gets back some <em>output</em> from the function.
+  - A method is a special kind of functions, Or A function that associated with a particular object.
+  - Every method is a function but not Every function is a method.
+  - <code>edna.home()</code> is a call to the method named home on an object named <code>edna</code>.
+  - <code>max(23, 17)</code> is a call to the function named <code>max</code>.
 </details>
 
 
