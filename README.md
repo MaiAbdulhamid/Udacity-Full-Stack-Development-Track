@@ -211,11 +211,12 @@
   ### 2.10- CSS syntax
   - There are two rulesets here. Each one has a selector and a block of rules.
   - The selector occurs at the start of each ruleset, and describes what elements the ruleset will be applied to.
+  
   ```
-		li {
-				color: green;
-				margin:20px;
-		}
+    li {
+      color: green;
+      margin:20px;
+    }
   ```
   - <code>li</code> -> selector
   - <code>color: green;</code> -> declaration / rule 
@@ -232,15 +233,16 @@
   ### 2.14- What's so "cascading" about CSS?
   - The term "cascading" in Cascading Style Sheets refers to the way that style properties "cascade" down the DOM tree, starting at the top. A style applied to the body element will affect the entire document. A style applied to a lower-level element will affect that element and all its descendants.
   - A style applied at a lower level can override a style at a higher level. For instance, if the body has color: red but a paragraph within the body has color: blue, the blue will apply to that paragraph and to any elements inside it:
+  
   ```
-		<style>
-				body { color: red; }
-				p { color: blue; }
-		</style>
-		<body>
-				<p> This will be blue, not red. <br>
-						<em> Same with this. </em> </p>
-		</body>
+    <style>
+      body { color: red; }
+      p { color: blue; }
+    </style>
+    <body>
+      <p> This will be blue, not red. <br>
+        <em> Same with this. </em> </p>
+    </body>
   ```
   ### 2.15- Units
   - CSS allows you to specify heights (and other distances) using inches or centimeters, but a yard (36 inches) is a much larger unit than we usually use on the web.
@@ -249,16 +251,16 @@
   ### 2.16- Boxs
   - Each element is inside a box.
   ```
-		<style>
-			.blue_box {
-				border: 10px solid blue;
-				padding: 0.5em;
-				width: 150px;
-				height: 100px;
-			}
-		</style>
+    <style>
+      .blue_box {
+        border: 10px solid blue;
+        padding: 0.5em;
+        width: 150px;
+        height: 100px;
+      }
+    </style>
 
-		<div class="blue_box">Hooray, a box!</div>
+    <div class="blue_box">Hooray, a box!</div>
   ```
   ### 2.17- Percentages
   - The width property only changes the width of the contents. The padding, border, and margin are not included in the width (so they add extra width around the sides of the box!).
@@ -268,7 +270,7 @@
   ### 2.19- Separating style
   - Linking stylesheets: To link to a stylesheet in your HTML file, add a link element to the head of the HTML file. The syntax for the link element is just like this:
   ```
-  	<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
   ```
   - If you are linking to a stylesheet located on another web server, you will use a full URL in the href attribute. If you're linking to one that's in the same directory as your HTML file, you can just use the filename as a relative URL.
   ### 2.20- Color
@@ -290,10 +292,10 @@
   ### 2.23- Practice — Fonts
   - We can style fonts using a bunch of separate declarations, like this:
   ```
-		font-weight: bold;
-		font-style: italic;
-		font-size: 14pt;
-		text-decoration: underline;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 14pt;
+    text-decoration: underline;
   ```
   - Or we can combine all of this styling info into one declaration, by using the short-hand font property. This can be very convenient!
   - What's not so convenient is that the values for the font property have to be in a certain specific order or they won't work. This is a great example of why it's important to get comfortable looking things up in the documentation.
@@ -311,42 +313,42 @@
   - For example, if we place some text inside an <code>em</code> element, this is our way of indicating that this text should be emphasized in some way. But to a program that's reading the page aloud to the user, it won't use italics; it will use tone of voice. And even in a page that _is_ displayed to the user, you might want it to be emphasized using color or another property, instead of with italics.
   ### 2.25- Practice — Containers
   ```
-		<style>
-		.box{
-			width: 100px;
-			height: 100px;
-			text-align: center;
-			font-size: 30px;
-			font-weight: bold;
-			font-family: sans-serif;
-			float: right;
-		}
-		</style>
-		<div class="box red">red</div>
-		<div class="box green">green</div>
-		<div class="box yellow">yellow</div>
+    <style>
+      .box{
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        font-size: 30px;
+        font-weight: bold;
+        font-family: sans-serif;
+        float: right;
+      }
+    </style>
+    <div class="box red">red</div>
+    <div class="box green">green</div>
+    <div class="box yellow">yellow</div>
   ```
   - Each box gets floated individually, which causes them to line up in a horizontal row rather than staying in a vertical stack.
   - behavior changes if we first put the three boxes inside a container <code>div</code>.
   ```
-		<style>
-		.box{
-			width: 100px;
-			height: 100px;
-			text-align: center;
-			font-size: 30px;
-			font-weight: bold;
-			font-family: sans-serif;
-		}
-		.container{
-				float: right;
-		}
-		</style>
-		<div class="container">
-			<div class="box red">red</div>
-			<div class="box green">green</div>
-			<div class="box yellow">yellow</div>
-		</div>
+    <style>
+      .box{
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        font-size: 30px;
+        font-weight: bold;
+        font-family: sans-serif;
+      }
+      .container{
+        float: right;
+      }
+    </style>
+    <div class="container">
+      <div class="box red">red</div>
+      <div class="box green">green</div>
+      <div class="box yellow">yellow</div>
+    </div>
   ```
   ### 2.26- flexbox
   - [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox)
@@ -354,49 +356,49 @@
   - When using flexbox, it's important to understand how the size of the container element affects the layout of the boxes that are inside of it.
   ### 2.28- Replicating a design
   ```
-		/* CSS  */
-		ul{
-			display: flex;
-			flex-wrap: wrap;
-			width: 335px;
-			padding: 5px;
-		}
+    /* CSS  */
+    ul{
+      display: flex;
+      flex-wrap: wrap;
+      width: 335px;
+      padding: 5px;
+    }
 
-		li{
-			width: 95px;
-			height: 95px;
-			list-style: none;
-			text-align: center;
-			background-color: #89c9ff;
-			margin: 5px;
-			font: bold 80px sans-serif;
-			border: 1px solid #000
-		}
+    li{
+      width: 95px;
+      height: 95px;
+      list-style: none;
+      text-align: center;
+      background-color: #89c9ff;
+      margin: 5px;
+      font: bold 80px sans-serif;
+      border: 1px solid #000
+    }
   ```
 
   ```
-		<!DOCTYPE html>
-		<html lang="en">
-		<head>
-				<title>Tic Tac Toes</title>
-				<link rel="stylesheet" href="tictactoe.css">
-		</head>
-		<body>
-				<ul>
-						<li>X
-						<li>
-						<li>O
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <title>Tic Tac Toes</title>
+        <link rel="stylesheet" href="tictactoe.css">
+      </head>
+      <body>
+        <ul>
+          <li>X
+          <li>
+          <li>O
 
-						<li>
-						<li>X
-						<li>O
+          <li>
+          <li>X
+          <li>O
 
-						<li>X
-						<li>O
-						<li>
-				</ul>
-		</body>
-		</html>
+          <li>X
+          <li>O
+          <li>
+        </ul>
+      </body>
+    </html>
   ```
 
 </details>
@@ -411,14 +413,14 @@
   ### 3.2- Drawing with turtles 
   - turtles: A data object that knows how to draw lines on the screen.
   ```
-		import turtle
-		fred = turtle.Turtle()
-		fred.color("red")
-		fred.forward(100)
-		fred.right(135)
-		fred.forward(140)
-		fred.right(135)
-		fred.forward(100)
+    import turtle
+    fred = turtle.Turtle()
+    fred.color("red")
+    fred.forward(100)
+    fred.right(135)
+    fred.forward(140)
+    fred.right(135)
+    fred.forward(100)
   ```
   ### 3.3- Variables
   - variable: A connection between a name in the code and some data in the computer’s memory.
@@ -628,7 +630,7 @@
       t.forward(side*10)
       t.right(120)
   ```
-  ### What's a function? (1/2)
+  ### What's a function?
   - A function is a block of code that has a name, but that doesn't run until we tell it to.
   - We can tell a function to run by <em>calling</em> that function.
   - To <em>call</em> a function, use the name of the function, followed by parentheses (as in <code>range(5)</code>).
@@ -637,10 +639,73 @@
     - Runs the code in the function.
     - Passes <em>input</em> to the function.
     - Gets back some <em>output</em> from the function.
-  - A method is a special kind of functions, Or A function that associated with a particular object.
+		
+  - A **method** is a function that's associated with an object.It is a special kind of functions.
   - Every method is a function but not Every function is a method.
   - <code>edna.home()</code> is a call to the method named home on an object named <code>edna</code>.
   - <code>max(23, 17)</code> is a call to the function named <code>max</code>.
+  - **Argument**: is a value that we can pass to a func-tion when we call that function.
+	
+  ### Defining functions
+
+  ```
+
+  def spiral():
+      t = turtle.Turtle()
+      t.color("cyan")
+      for n in range(100):
+          t.forward(n)
+          t.right(20)
+
+  spiral()
+
+  ```
+  ### Parameters and arguments
+  - When we define a function, we specify its parameters: <code>def spiral(sides, turn, color, width): </code>
+  -	When we call a function, we specify its arguments: <code>spiral(150, -30, "blue", 10) </code>
+  - Parameters are just variables: Because the variable, is given as part of the function definition, we call it a parameter.
+  - Arguments are just inputs: it's just some input that we pass to a function.
+  - When we say that it "passes" this argument, all we mean is that it assigns this number to the corresponding parameter.
+  - "passing an argument to a function" is really just another way that we can assign a value to a variable.
+  <p> <img src="https://video.udacity-data.com/topher/2018/September/5ba5c286_arguments-to-parameters/arguments-to-parameters.png"/> </p>
+  
+  ### Defining a <code>draw_square</code> function
+  - function has to be defined before we can call it—otherwise, we'll get an error.
+  - we only have to define the function one time in our program.
+  ```
+  import turtle
+  jack = turtle.Turtle()
+  jack.color("yellow")
+
+  def draw_square():
+    for side in range(4):
+      jack.forward(100)
+      jack.right(90)
+
+  draw_square()
+
+  for square in range(80):
+    draw_square()
+    jack.speed(0)
+    jack.forward(5)
+    jack.left(5)
+  ```
+  
+  ### Adding a parameter to <code>draw_square</code>
+  - By putting a parameter in the function definition, we make it possible to pass that function some input when we call it.
+  ```
+  def draw_square(length):
+    for side in range(4):
+      jack.forward(length)
+      jack.right(90)
+  ```
+  ### 
+
+	
+
+	
+	
+	
 </details>
 
 
