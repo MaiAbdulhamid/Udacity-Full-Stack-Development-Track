@@ -576,8 +576,8 @@
 <details>
 	<summary>Lesson 2: functions, part One</summary>
   
-  ### Statements
-  - There are two kinds of Statements
+  ### 4.1- Statements
+  - There are two kinds of Statements:
     - Simple Statements
     - compound Statements
   - Simple Statements:
@@ -588,14 +588,14 @@
     - **Whether** the code runs.
     - **When** the code runs.
     - **How many** times the code runs.
-  - Control Flow: is the order in which statements are executed in a piece of code.
-  - The default control flow is from top the bottom.
+  - **Control Flow**: is the order in which statements are executed in a piece of code.
+  - The default control flow is from the top to the bottom.
   - Compound Statements change the default control flow.
-  ### The range function
-  - the best programmers write fewer lines of code rather than more.
+  ### 4.2- The range function
+  - The best programmers write fewer lines of code rather than more.
   - The list <code>[0, 1, 2, 3, 4, 5, 6]</code> has seven items, so we'll write <code>range(7)</code> instead.
-  ### Crunching numbers (1/2)
-  - Expression: Is apiece of code that resolves to some values.
+  ### 4.3- Crunching numbers (1/2)
+  - Expression: Is a piece of code that resolves to some values.
   - <code>5 + 9 * 2</code> -> Expression.
   - <code>+, * </code> -> Operators.
   - <code>5, 9, 2</code> -> Operands.
@@ -616,8 +616,8 @@
         t.forward(length)
         t.right(360 / sides)
   ```
-  ### Crunching numbers (2/2)
-  - to drow This shape:
+  ### 4.4- Crunching numbers (2/2)
+  - To drow This shape:
   
   <p><img src="https://video.udacity-data.com/topher/2018/March/5ab5dd13_spirangle/spirangle.png"/></p>
   
@@ -630,23 +630,23 @@
       t.forward(side*10)
       t.right(120)
   ```
-  ### What's a function?
+  ### 4.5- What's a function?
   - A function is a block of code that has a name, but that doesn't run until we tell it to.
   - We can tell a function to run by <em>calling</em> that function.
-  - To <em>call</em> a function, use the name of the function, followed by parentheses (as in <code>range(5)</code>).
-  - **Callable** code: is the code that will only run when a call statement is used.
-  -  A function call like range(100) do:
+  - To <em>call</em> a function, use the name of the function, followed by parentheses.
+  - **Callable code**: is the code that will only run when a call statement is used.
+  -  A function call like <code>range(100)</code> do:
     - Runs the code in the function.
     - Passes <em>input</em> to the function.
     - Gets back some <em>output</em> from the function.
 		
-  - A **method** is a function that's associated with an object.It is a special kind of functions.
+  - A **method** is a function that's associated with an object. It is a special kind of functions.
   - Every method is a function but not Every function is a method.
   - <code>edna.home()</code> is a call to the method named home on an object named <code>edna</code>.
   - <code>max(23, 17)</code> is a call to the function named <code>max</code>.
-  - **Argument**: is a value that we can pass to a func-tion when we call that function.
+  - **Argument**: is a value that we can pass to a function when we call that function.
 	
-  ### Defining functions
+  ### 4.6- Defining functions
 
   ```
 
@@ -660,17 +660,17 @@
   spiral()
 
   ```
-  ### Parameters and arguments
+  ### 4.7- Parameters and arguments
   - When we define a function, we specify its parameters: <code>def spiral(sides, turn, color, width): </code>
-  -	When we call a function, we specify its arguments: <code>spiral(150, -30, "blue", 10) </code>
+  - When we call a function, we specify its arguments: <code>spiral(150, -30, "blue", 10) </code>
   - Parameters are just variables: Because the variable, is given as part of the function definition, we call it a parameter.
   - Arguments are just inputs: it's just some input that we pass to a function.
   - When we say that it "passes" this argument, all we mean is that it assigns this number to the corresponding parameter.
   - "passing an argument to a function" is really just another way that we can assign a value to a variable.
   <p> <img src="https://video.udacity-data.com/topher/2018/September/5ba5c286_arguments-to-parameters/arguments-to-parameters.png"/> </p>
   
-  ### Defining a <code>draw_square</code> function
-  - function has to be defined before we can call it—otherwise, we'll get an error.
+  ### 4.8- Defining a <code>draw_square</code> function
+  - function has to be defined before we can call it — otherwise, we'll get an error.
   - we only have to define the function one time in our program.
   ```
   import turtle
@@ -691,7 +691,7 @@
     jack.left(5)
   ```
   
-  ### Adding a parameter to <code>draw_square</code>
+  ### 4.9- Adding a parameter to <code>draw_square</code>
   - By putting a parameter in the function definition, we make it possible to pass that function some input when we call it.
   ```
   def draw_square(length):
@@ -699,13 +699,120 @@
       jack.forward(length)
       jack.right(90)
   ```
-  ### 
+  ### 4.10- Make your own function
+  - Apply this pattern:
+  <p> <img src="https://video.udacity-data.com/topher/2017/December/5a37d29c_screen-shot-2017-12-18-at-6.36.52-am/screen-shot-2017-12-18-at-6.36.52-am.png"/> </p>
+  
+  ```
+  # Write a function here that creates a
+  # turtle and draws a shape with it.
+  def tringles(color, start):
+    t = turtle.Turtle()
+    t.color(color)
+    t.width(3)
+    t.speed(0)
+    t.right(start)
+    for n in range(6):
+      for side in range(3):
+        t.forward(100)
+        t.right(120)
+        t.hideturtle()
+      t.right(15)
 
-	
+  # Call the function multiple times.
 
-	
-	
-	
+  tringles('orange', 0)
+  tringles('red', 120)
+  tringles('yellow', 240)
+  ```
+  ### 4.11- Variable scope
+  - **scope**: the part of the code for which a variable is defined
+  - **Local scope**: Defined inside a function. can only be used inside that function. It isn't defined outside.
+  - **global variable**: Defined outside of a function. It is defined everywhere in the code.
+  ### 4.12- Indent with care!
+  - Some indentation mistakes will cause Python to give an error message. Others (like having a line outside of a loop when you meant for it to be inside of a loop) won't throw an error—instead, they'll simply cause the code to do something you didn't expect!
+  
+  ### 4.13- If this equals that
+  - <code>==</code> ->To check for conditions:
+  ```
+  import turtle
+
+  romeo = turtle.Turtle()
+  juliet = turtle.Turtle()
+
+  juliet.color("misty rose")
+  juliet.width(3)
+
+  romeo.color("violet")
+  romeo.width(3)
+
+  romeo_last_name = "montague"
+
+  romeo.left(40)
+  romeo.forward(100)
+  for side in range(185):
+      romeo.forward(1)
+      romeo.left(1)
+  romeo.hideturtle()
+
+  if romeo_last_name == "montague":
+      juliet.left(140)
+      juliet.forward(100)
+      for side in range(185):
+          juliet.forward(1)
+          juliet.right(1)
+      juliet.hideturtle()
+  ```
+  ### 4.14- if / else
+  - It's a variation on the if statement. The way it works is that the condition is checked, and if it's true, then the code under the if line will run; but if the condition is false, the code under the else line will run instead.
+  
+  ### 4.15- Modulo (1/3)
+  - Modulo operator, %, divides one number by another—and then gives the remainder of that division.
+  - [great video](https://www.khanacademy.org/math/arithmetic/arith-review-multiply-divide/arith-review-remainders/v/introduction-to-remainders).
+  - [practice problems you can try out.](https://www.khanacademy.org/math/arithmetic/arith-review-multiply-divide/arith-review-remainders/e/division-with-remainders-1).
+  - The most important concept here is not the math itself. The key idea is that **we need a way to create a repeating pattern**—and the modulo operator gives us a way to do that.
+  -  If we have <code>a % b</code> and <code>b</code> is bigger, then the remainder will simply be <code>a</code>.
+  - For example:
+    - <code>7 % 10</code> gives the result <code>7</code>
+    - <code>7 % 100</code> gives the result <code>7</code>
+    - <code>7 % 1000</code> gives the result <code>7</code>
+  - A common thing to do with the modulo operator is to use it with an **increasing sequence** of numbers. For example, we can do <code>1 % 5</code>, then <code>2 % 5</code>, then <code>3 % 5</code>, and so on.
+  ### 4.16- Modulo (2/3)
+  ```
+  import turtle
+
+  t = turtle.Turtle()
+  t.width(3)
+  t.color("yellow")
+  t.penup()
+  t.back(200)
+  t.pendown()
+  for n in range(10):
+      t.forward(50)
+      t.left(90)
+      t.forward(50)
+      t.right(90)
+
+  t.hideturtle()
+  ```
+  - Make staircase pattern. But do it with only one use of the <code>forward</code> method in your code. 
+  ```
+  for n in range(10):
+      t.forward(50)
+      if n % 2 == 0:
+          t.left(90)
+      else:
+          t.right(90)
+
+  t.hideturtle()
+  ```
+</details>
+
+
+<details>
+	<summary>Lesson 3: functions, part Two</summary>
+  
+  
 </details>
 
 
