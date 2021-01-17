@@ -2,7 +2,7 @@
  
 ## Milestone 1 - HTML, CSS
 <details>
-  <summary>Intro to HTML: </summary>
+  <summary>Intro to HTML </summary>
 
   ### 1.1- Intoduction
   - The web is a collection of documents written in html.
@@ -812,7 +812,263 @@
 <details>
 	<summary>Lesson 3: functions, part Two</summary>
   
+  ### 5.1- Returning a value
+  ```
+  def simple_function():
+    return 10
+
+  distance = simple_function() # is equivalent to: distance = 10
+  ```
+  - When we say that it "returns the number <code>10</code>" what we mean is this: This code works the same as if the function call, <code>simple_function()</code>, were replaced by the number <code>10</code>.
+  - So a return statement takes a value and returns it back to the place from which the function was called.
   
+  ### 5.2- Returning a value (3/3)
+  - Function ca have more than one <code>return</code> statements.
+  - Only the first <code>return</code> statement will run and the program will get out of the function.
+  ```
+  def simple_function():
+    return 10 # will execute this line
+    # These all will be dead code
+    return 12
+    return 14
+    return 16
+  ```
+  - **Dead code**: Code that can be in a program but never do anything.
+  - The only way to Use multiple <code>return</code> statements with <code>if</code>:
+  ```
+  def bead_color(num):
+      if num % 3 == 0:
+          return "red"
+      if num % 3 == 1:
+          return "green"
+      if num % 3 == 2:
+          return "blue"
+  ```
+  ### 5.3- Passing arguments in loops (1/3)
+  - When we call a function from inside a loop, we can use the loop variable as input for that function. This allows us to call the same function repeatedly, but pass it a different input each time.
+  ```
+  for angle in [180, 135, 90, 45, 0]:
+    star("red", 5, 50, angle, 100)
+  ```
+  - Each time through the loop, the <code>angle</code> variable will get a new number assigned to it (from the list), and we can then pass this to the <code>star</code> function when we call it.
+  ### 5.4- Passing arguments in loops (3/3)
+  - Drow this pattern:
+  <p><img src="https://video.udacity-data.com/topher/2018/September/5baec871_passing-polygons/passing-polygons.png" /> </p>
+  
+  - The smallest polygon has 3 sides and the largest has 14!
+  
+  ```
+  import turtle
+
+  def polygon(sides, length):
+    t = turtle.Turtle()
+    t.color("lime")
+    t.speed(0)
+    angle = 360 / sides
+    for side in range(sides):
+      t.forward(length)
+      t.right(angle)
+    t.hideturtle()
+
+  for side in [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]:
+      polygon(side, 35)
+  ```
+  ### 5.5- Fizz Buzz, turtle style
+  - The idea of the game is: 
+    - If the number is evenly divisible by 3, you say "Fizz"
+    - If the number is evenly divisible by 5, you say "Buzz"
+    - If the number is evenly divisible by both 3 and 5, you say "FizzBuzz"
+  - When we say "evenly divisible", we just mean that we can divide the one number by the other and not get any remainder.
+  - This is one way we can check for a number that is divisible by both <code>3</code> and <code>5</code>:
+  ```
+  if x % 3 == 0:
+    # Fizz
+    if x % 5 == 0:
+        # Buzz
+  ```
+  - First, we check if the number is divisible by <code>3</code>. If it's not, then the whole structure gets skipped over (none of the code inside gets run!). But if the number is divisible by <code>3</code>, then it will also check whether the number is divisible by <code>5</code>.
+  ```
+  import turtle
+
+  def fizz(tur):
+      # A red square bead.
+      tur.color("red")
+      tur.left(90)
+      for side in [10, 20, 20, 20, 10]:
+          tur.forward(side)
+          tur.right(90)
+
+  def buzz(tur):
+      # A green hexagonal bead.
+      # Fits inside the red bead.
+      tur.color("green")
+      tur.left(60)
+      for side in range(6):
+          tur.forward(10)
+          tur.right(60)
+      tur.right(60)
+
+  def plain(tur):
+      # A gray octagonal bead.
+      tur.color("gray")
+      tur.left(90)
+      for side in [4, 8, 8, 8, 8, 8, 8, 8, 4]:
+          tur.forward(side)
+          tur.right(45)
+      tur.right(45)
+
+  # Set up the turtle to draw beads.
+  t = turtle.Turtle()
+  t.speed(0)
+  t.width(2)
+  t.penup()
+  t.back(180)  # Back up to make room!
+  t.pendown()
+
+  for num in range(16):
+      # Change this code:
+
+      if num % 3 == 0:
+          fizz(t)
+          if num % 5 == 0:
+              buzz(t)
+      else:
+          if num % 5 == 0:
+              buzz(t)
+          else:
+              plain(t)
+      # Advance to the next bead spot.
+      t.color("gray")
+      t.forward(22)
+  t.hideturtle()
+  ```
+  ### 5.6- The random module
+  - **Deterministic program**: a program that always produces the same output for a given input.
+  - When we want to change this Deterministic behavior, we use random module.
+    - <code>random.choice([items])</code> -> To use the function, we simply call it and pass it a list. The function then returns a random item from the list.
+    
+    ```
+    cards = ["ace", 2, 3, 4, 5, 6, 7, 8, 9, "jack", "queen", "king"]
+    my_card = random.choice(cards)
+    ```
+    
+    - <code>random.randint(lower, upper)</code> -> randint stands for "random integer", because that's exactly what it does—it returns a random integer.
+    
+    ```
+    die_roll = random.randint(1, 6)
+    ```
+  - To make random shape:
+  
+  ```
+  import turtle
+  import random
+
+
+  colors = ["red", "orange", "yellow", "green", "blue", "purple"]
+
+  t = turtle.Turtle()
+  t.width(20)
+
+  for step in range(100):
+      # Change this to use a random number.
+      angle = random.randint(-90,90)
+
+      # Change this to use a random color.
+      color = random.choice(colors)
+
+      t.color(color)
+      t.right(angle)
+      t.forward(10)
+  ```
+  
+  ### 5.7- Comparison operators
+  - Python has several other comparison operators:
+  
+  | Operation           | What it means   |
+  | ------|:-----:|
+  | <code>a == b</code> | Is <code>a</code> equal to <code>b</code>?  |
+  | <code>a < b</code> | Is <code>a</code> less than <code>b</code>? |
+  | <code>a > b</code> | Is <code>a</code> greater than <code>b</code>? |
+  | <code>a <= b</code> | Is <code>a</code> less than or equal <code>b</code>? |
+  | <code>a > b</code> | Is <code>a</code> greater than or equal <code>b</code>? |
+  | <code>a != b</code> | Is <code>a</code> not equal to <code>b</code>?  |
+  
+  ### 5.8- if and elif
+  
+  ```
+  mood = "happy"
+  if mood == "happy":
+      riley.color("yellow")
+  if mood == "sad":
+      riley.color("blue")
+  else:
+      riley.color("gray")
+  ```
+  - This code makes color gray, instead yellow, because it treats the second <code>if</code> statement as a separate statement, that its result overrides the first <code>if</code> statement result.
+  - To fix that we can use nesting:
+  ```
+  if mood == "happy":
+      riley.color("yellow")
+  else:
+      if mood == "sad":
+          riley.color("blue")
+      else:
+          riley.color("gray")
+  ```
+  - Sometimes nesting is very useful, or even necessary, but ... it kind of makes my brain hurt! And in this case, it's avoidable if we use <code>elif</code>
+  - We can also fix that with <code>elif</code>, wich makes all <code>if</code> statements one compound:
+  ```
+  if mood == "happy":
+    riley.color("yellow")
+  elif mood == "sad":
+      riley.color("blue")
+  else:
+      riley.color("gray")
+  # The result will be yellow
+  ```
+  - we can use random module To pick a random mood:
+  ```
+  import turtle
+  import random
+
+  riley = turtle.Turtle()
+  riley.width(5)
+
+  # Add your code here.
+  moods = ["happy", "sad", "bored", "depressed"]
+  mood = random.choice(moods)
+  if mood == "happy":
+      riley.color("yellow")
+  elif mood == "sad":
+      riley.color("red")
+  elif mood == "bored":
+      riley.color('orange')
+  elif mood == "depressed":
+      riley.color('black')
+  else:
+      riley.color("gray")
+
+  for side in range(5):
+      riley.forward(100)
+      riley.right(144)
+  ```
+  
+  ### 5.9- Staying in bounds
+  - <code>t.xcor()</code> -> returns the x coordinate of turtle object.
+  - <code>t.ycor()</code> -> returns the y coordinate of turtle object.
+  - If the turtle's canvas is 400 by 400 pixels in size:
+    - If the turtle is off to the left, their x-coordinate will be less than -200 (for example, -201).
+    - If the turtle is off to the right, their x-coordinate will be more than 200 (for example, 201).
+  ```
+  for step in range(2000):
+      t.forward(1)
+      # Add your code here
+      if t.xcor() > 190 or t.xcor() < -190:
+          t.left(180)
+          t.forward(1)
+  ```
+
+
 </details>
 
 
