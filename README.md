@@ -1072,7 +1072,12 @@
 </details>
 
 
+## Milestone 2 - More Python
 
+<details>
+  <summary>Lesson 1: Strings & Lists</summary>
+
+</details>
 
 
 
