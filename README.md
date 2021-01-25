@@ -1077,6 +1077,13 @@
 <details>
   <summary>Lesson 1: Strings & Lists</summary>
 
+### Variables vs. literals
+- Interactive mode, also known as the REPL provides us with a quick way of running blocks or a single line of Python code. The code executes via the Python shell, which comes with Python installation. Interactive mode is handy when you just want to execute basic Python commands or you are new to Python programming and just want to get your hands dirty with this beautiful language.
+- To access the Python shell, open the terminal of your operating system and then type "python". Press the enter key and the Python shell will appear. This is the same Python executable you use to execute scripts, which comes installed by default on Mac and Unix-based operating systems.
+-	variable names (identifiers) -> can assign to all sorts of different data in the computer's memory using assignment `distance = sortOfData`.
+- literals: represents the same fixed value every time like `10`, `"yummy"`.
+
+
 </details>
 
 
