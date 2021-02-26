@@ -1112,10 +1112,43 @@
 - The underlying idea of indexing is simple: It's just a way to give a number to each item in a sequence, so that you can tell Python which item you're referring to.
 - Note that indexes start at `0`, not `1`. So the first item in a sequence would have an index of `0`, while the second would have an index of `1`, the third an index of `2`, and so on.
 - You can also use negative numbers as indexes. If `word` is a string, then `word[-1]` is the last character of that string, and `word[-2]` is the second-last, and so forth.
-- `word = "Fish"` -> The letter "s" is both word[2] counting from the left, and word[-2] counting from the right, if word is the string "Fish".
+- `word = "Fish"` -> The letter "s" is both `word[2]` counting from the left, and `word[-2]` counting from the right, if word is the string "Fish".
 
 ### IndexError
+- Assume that you just started Python and no new variables have been defined
+	- `2 + "bears"` -> TypeError
+	- `print(donkey)` -> NameError
+	- `import explosion` -> ModuleNotFoundError
+-	A string with no characters in it is an empty string: `word = ""`.
+-	The IndexError message happens when you're trying to use an index to access a particular item, but there is no item with that index.
+```
+no_words = ""
+print(no_words[0])
+```
+- You can avoid IndexError by writing loops that don't go past the end of the string. There are multiple ways to accomplish this:
+`for char in word:` Or `for n in range(len(word)):`.
+
 ### Slicing (1/2)
+- `>>> "python"[0:2]` -> 'py'
+- `>>> "python"[1:5]` -> 'ytho'
+- `>>> "python"[0:5]` -> 'pytho'
+- `>>> "python"[0:6]` -> 'python'
+- `>>> "python"[:]` -> 'python'
+- Now we have a string stored in the `word` variable, and we have the `length` of that string stored in the length variable. In this case, the length is `10`.
+
+```
+>>> word = "definitely"
+>>> length = len(word)
+```
+- `>>> word[:length]` -> 'definitely'
+
+- `>>> word[:length - 2]` ->  'definite'
+
+- `>>> word[length - 8:]` -> 'finitely'
+
+- `>>> word[length - 8:length - 2]` ->  'finite'
+
+
 ### Concatenation (1/2)
 ### Strings to numbers to strings
 ### Methods on strings
