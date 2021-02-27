@@ -1077,13 +1077,13 @@
 <details>
   <summary>Lesson 1: Strings & Lists</summary>
 
-### Variables vs. literals
+### 6.1- Variables vs. literals
 - Interactive mode, also known as the REPL provides us with a quick way of running blocks or a single line of Python code. The code executes via the Python shell, which comes with Python installation. Interactive mode is handy when you just want to execute basic Python commands or you are new to Python programming and just want to get your hands dirty with this beautiful language.
 - To access the Python shell, open the terminal of your operating system and then type "python". Press the enter key and the Python shell will appear. This is the same Python executable you use to execute scripts, which comes installed by default on Mac and Unix-based operating systems.
 -	variable names (identifiers) -> can assign to all sorts of different data in the computer's memory using assignment `distance = sortOfData`.
 - literals: represents the same fixed value every time like `10`, `"yummy"`.
 
-### Length
+### 6.2- Length
 - `>>> len(variable or literal)` -> Returns the length of the variable or the literal.
 - There is a Python module called `unicodedata` that lets you look up characters by name, including emoji:
 
@@ -1104,7 +1104,7 @@
 5
 ```
 
-### Indexing
+### 6.3- Indexing
 - We've seen that lists and strings have some things in common. Strings and lists both:
 	-	Have a length.
 	-	Are sequences.
@@ -1114,7 +1114,7 @@
 - You can also use negative numbers as indexes. If `word` is a string, then `word[-1]` is the last character of that string, and `word[-2]` is the second-last, and so forth.
 - `word = "Fish"` -> The letter "s" is both `word[2]` counting from the left, and `word[-2]` counting from the right, if word is the string "Fish".
 
-### IndexError
+### 6.4- IndexError
 - Assume that you just started Python and no new variables have been defined
 	- `2 + "bears"` -> TypeError
 	- `print(donkey)` -> NameError
@@ -1128,7 +1128,7 @@ print(no_words[0])
 - You can avoid IndexError by writing loops that don't go past the end of the string. There are multiple ways to accomplish this:
 `for char in word:` Or `for n in range(len(word)):`.
 
-### Slicing (1/2)
+### 6.5- Slicing (1/2)
 - `>>> "python"[0:2]` -> 'py'
 - `>>> "python"[1:5]` -> 'ytho'
 - `>>> "python"[0:5]` -> 'pytho'
@@ -1148,7 +1148,7 @@ print(no_words[0])
 
 - `>>> word[length - 8:length - 2]` ->  'finite'
 
-### Concatenation (1/2)
+### 6.6- Concatenation (1/2)
 - The `+` operator will perform arithmetic addition on two numbers, merge two lists, or concatenate two strings.
 - `>>> 1 + 1` -> 2
 - `>>> '1'+ ' ' + '1'` ->'1 1'
@@ -1159,7 +1159,7 @@ def adverbly(str):
     return str + 'ly'
 print(adverbly("quick")) #Prints quickly
 ```
-### Strings to numbers to strings
+### 6.7- Strings to numbers to strings
 
 ```
 >>> n = input("Please enter a number: ")
@@ -1194,12 +1194,12 @@ result = int(n1) + int(n2) + int(n3)
 f"{n1} + {n2} + {n3} = {result}"
 ```
 
-### Methods on strings
+### 6.8- Methods on strings
 - `startswith` method is  simply a function that checking if one string starts with another. It is associated with a specific object.
 - String predicates -> which means that they return `True` or `False` to indicate something about the string.
 - [ list of string methods](https://docs.python.org/3/library/stdtypes.html#string-methods)
 
-### Boolean values
+### 6.9- Boolean values
 - `and` operation:
 	- `>>> True and True` -> `True`
 	- `>>> True and False` -> `False`
@@ -1221,7 +1221,7 @@ def good_length(s):
 	- not x is false if x is true.
 - An interesting consequence of these rules is that `not (x and y)` is the same as `(not x) or (not y)`. Similarly, `not (x or y)` is the same as `(not x) and (not y)`.
 
-### Operations on lists
+### 6.10- Operations on lists
 -	Strings and lists have something important in common: They are both sequence types. That is, they're both data types that represent a sequence of values, not just a single value.
 -	With a string, the values are the individual characters; with a list, they can be just about anything. But in both cases, there's a set of items, and the items have index numbers to identify the sequence in which they're ordered.
 -	First, define the following list: `>>> my_list = ["a", "b", "c", "d"]`
@@ -1242,7 +1242,7 @@ def total_length(list_of_strings):
     return total
 ```
 
-### Methods on lists
+### 6.11- Methods on lists
 - create a list in your Python interpreter: `>>> words = ["echidna", "dingo", "crocodile", "bunyip"]`.
 - `words.append("platypus")`-> Add one item to the end of a list.
 - `words.extend("abc")`-> Add possibly several items to the end of a list.
@@ -1261,7 +1261,7 @@ def total_length(list_of_strings):
 >>> first_list
 ```
 
-### Mutable vs. immutable
+### 6.12- Mutable vs. immutable
 - lists are **mutable**. That means you can change the items in a list after it has been created.
 - In addition to adding new items with methods like `append` and `extend`, you can also replace current items with new ones. You do this using the index operator `[]`.
 - So lists are **mutable** (they can be changed), but strings are **immutable** (they cannot be changed).
@@ -1288,7 +1288,7 @@ def total_length(list_of_strings):
 - You just saw that when you changed the items in `first_list`, this also affected `second_list`.
 - Because <code>first_list</code> and <code>second_list</code> don't actually refer to two separate lists. It's the same <em>one</em> list, with two different names.
 
-### Augmented assignments
+### 6.13- Augmented assignments
 - The effect of `n = n + 1` and `n += 1` is the same. The latter is called an **augmented assignment** statement, because it's an assignment statement but it augments the existing value rather than replacing it.
 
 - What do you think the new value of dog will be?
@@ -1298,7 +1298,7 @@ def total_length(list_of_strings):
 ```
 - Solution is: 'woofwoof'.
 
-### while loops (1/5)
+### 6.14- while loops (1/5)
 - A `while` loop will run while some condition is True. As soon as the condition is False, the loop will stop.
 
 ```
@@ -1319,7 +1319,7 @@ while n > 0:
 print("Blastoff!")
 ```
 
-### Infinite loops and breaking out
+### 6.15- Infinite loops and breaking out
 - It's possible to write code that gets stuck in an **infinite loop**! This happens when the condition you set up can only ever be True.
 
 ```
@@ -1342,7 +1342,7 @@ def no_repeating():
 ```
 - A `break` statement will always skip to the end of the innermost while or for loop. If you have a loop inside another loop, it will only exit the inside loop.
 
-### Finding substrings (1/4)
+### 6.16- Finding substrings (1/4)
 - When we search a string for substrings, we'll use index numbers to describe where the substring is found. For instance, if we search for 'ook' in 'cookbook', we'll say that it's found at positions 1 and 5. This means that if we take a slice of length 3 starting from one of these positions, we'll see that substring:
 ```
 >>> location = 5
@@ -1351,7 +1351,7 @@ def no_repeating():
 ook
 ```
 
-### Finding substrings (2/4)
+### 6.17- Finding substrings (2/4)
 - Our first goal will be to write a function, is_substring, that simply checks whether one string is a substring of another. If the first string is a substring of the other, it should return True; otherwise, it should return False.
 ```
 def is_substring(substring, string):
@@ -1363,7 +1363,7 @@ def is_substring(substring, string):
     return False
 ```
 
-### Finding substrings (3/4)
+### 6.18- Finding substrings (3/4)
 - Change `count_character` to `count_substring`:
 ```
 def count_character(string, target):
@@ -1423,7 +1423,7 @@ def count_substring(string, target):
 
 The new code is saying that if we count a substring, we'll advance the index position forward by len(target) so that we skip over the rest of the characters in the substring.
 
-### Finding substrings (4/4)
+### 6.19- Finding substrings (4/4)
 - Here's one way to write the `locate_first` function. We've only had to change a few things from the `count_substring` function: instead of returning a total, we return the index on a successful match, or the value `-1` on no match:
 
 ```
@@ -1458,13 +1458,13 @@ def locate_all(string, sub):
 []
 ```
 
-### More methods on strings
+### 6.20- More methods on strings
 - Assume that we've got the entire text of the novel A Tale of Two Cities in a string variable called tale:
 - How many times does the word "chocolate" occur in the novel? -> `tale.count("chocolate")`.
 -	Yes or no: Does the word "chocolate" occur in the novel? -> `"chocolate" in tale`.
 -	How far into the novel is the first occurrence of the word "chocolate"? -> `tale.find("chocolate")`.
 
-### Joining
+### 6.21- Joining
 - `"joiner".join("str")` -> sepatates the str with the joiner.
 - Write a function breakify that takes a list of strings, and returns a single string with <br> inserted between each two strings in the list:
 ```
@@ -1472,7 +1472,7 @@ def breakify(strings):
     return "<br>".join(strings)
 ```
 
-### Silly sentences
+### 6.22- Silly sentences
 - Make silly Random sentense choosen from `words` module :"D :
 
 ```
