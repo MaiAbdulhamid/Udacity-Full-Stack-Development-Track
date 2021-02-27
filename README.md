@@ -1148,24 +1148,398 @@ print(no_words[0])
 
 - `>>> word[length - 8:length - 2]` ->  'finite'
 
-
 ### Concatenation (1/2)
+- The `+` operator will perform arithmetic addition on two numbers, merge two lists, or concatenate two strings.
+- `>>> 1 + 1` -> 2
+- `>>> '1'+ ' ' + '1'` ->'1 1'
+- `>>> '1' + 1 ` -> TypeError
+-  A function called `adverbly` that takes a string as input and returns that string with "ly" appended to it:
+```
+def adverbly(str):
+    return str + 'ly'
+print(adverbly("quick")) #Prints quickly
+```
 ### Strings to numbers to strings
+
+```
+>>> n = input("Please enter a number: ")
+Please enter a number: 2
+>>> n * 2
+```
+- The result is `'22'`
+
+```
+>>> n = input("Please enter a number: ")
+Please enter a number: 2
+>>> int(n) + 2
+```
+- The result is `4`.
+
+- In this next exercise, your goal is to write a program that asks the user for three numbers, adds those numbers up, and then prints a message saying what the sum is. Like this:
+
+```
+Enter a number: 2
+Enter another number: 1
+Enter a third number: 3
+2 + 1 + 3 = 6
+```
+- Solution:
+```
+n1 = input("Enter a number: ")
+n2 = input("Enter another number: ")
+n3 = input("Enter a third  number: ")
+
+result = int(n1) + int(n2) + int(n3)
+
+f"{n1} + {n2} + {n3} = {result}"
+```
+
 ### Methods on strings
+- `startswith` method is  simply a function that checking if one string starts with another. It is associated with a specific object.
+- String predicates -> which means that they return `True` or `False` to indicate something about the string.
+- [ list of string methods](https://docs.python.org/3/library/stdtypes.html#string-methods)
+
 ### Boolean values
+- `and` operation:
+	- `>>> True and True` -> `True`
+	- `>>> True and False` -> `False`
+	- `>>> False and False` -> `False`
+
+- `or` Operation:
+	- `>>> True or True` -> `True`
+
+	- `>>> True or False` -> `True`
+
+	- `>>> False or False` -> `False`
+- The function should return <code>True</code> if the string is between <code>8</code> and <code>64</code> characters long, and <code>False</code> otherwise.
+```
+def good_length(s):
+    return len(s) > 8 and len(s) < 64
+```
+- There is a third boolean operation called `not`:
+	- not x is true if x is false.
+	- not x is false if x is true.
+- An interesting consequence of these rules is that `not (x and y)` is the same as `(not x) or (not y)`. Similarly, `not (x or y)` is the same as `(not x) and (not y)`.
+
 ### Operations on lists
+-	Strings and lists have something important in common: They are both sequence types. That is, they're both data types that represent a sequence of values, not just a single value.
+-	With a string, the values are the individual characters; with a list, they can be just about anything. But in both cases, there's a set of items, and the items have index numbers to identify the sequence in which they're ordered.
+-	First, define the following list: `>>> my_list = ["a", "b", "c", "d"]`
+	- `>>> my_list[1]` -> 'b'
+
+	- `>>> my_list[0:2]` ->  ['a', 'b']
+
+	- `>>> len(my_list)` -> 4 
+
+	- `>>> my_list[3] == "d"` -> True
+
+- Write a function total_length that takes a list of strings and returns the sum of the lengths of all the strings in that list:
+```
+def total_length(list_of_strings):
+    total = 0
+    for string in list_of_strings:
+        total += len(string)
+    return total
+```
+
 ### Methods on lists
+- create a list in your Python interpreter: `>>> words = ["echidna", "dingo", "crocodile", "bunyip"]`.
+- `words.append("platypus")`-> Add one item to the end of a list.
+- `words.extend("abc")`-> Add possibly several items to the end of a list.
+- `words.sort()`-> Change a list so it is in alphabetical (and numerical) order.
+- `words.reverse()`-> Change a list so it is in the opposite order from how it was before.
+- These methods all works on a list , Modify it, but don't returns any value.
+- `append()` -> Adds its argument as a single item to the end of the list. It only ever adds one item to a list.
+- `extend()` -> Treats its argument as a sequence and adds each item in the sequence to the end of the list. In other words, it adds a sequence of items to a list.
+- `extend()` similar to `append()` with for loop:
+```
+>>> first_list = [1, 2, 3]
+>>> second_list = [4, 5, 6]
+>>> for item in second_list:
+...     first_list.append(item)
+... 
+>>> first_list
+```
+
 ### Mutable vs. immutable
+- lists are **mutable**. That means you can change the items in a list after it has been created.
+- In addition to adding new items with methods like `append` and `extend`, you can also replace current items with new ones. You do this using the index operator `[]`.
+- So lists are **mutable** (they can be changed), but strings are **immutable** (they cannot be changed).
+
+```
+>>> breakfast = 'waffles'
+>>> new_breakfast = breakfast + ' and strawberries'
+>>> new_breakfast
+'waffles and strawberries'
+```
+- It may seem like we're modifying a string here, but what's actually happening in the computer's memory is that we are creating a new string. The old string is still exactly where it was, and hasn't been changed:
+```
+>>> breakfast
+'waffles'
+```
+
+- Try this example with lists:
+```
+>>> first_list = [1, 2, 3]
+>>> second_list = first_list
+>>> second_list
+>>> 
+```
+- You just saw that when you changed the items in `first_list`, this also affected `second_list`.
+- Because <code>first_list</code> and <code>second_list</code> don't actually refer to two separate lists. It's the same <em>one</em> list, with two different names.
+
 ### Augmented assignments
+- The effect of `n = n + 1` and `n += 1` is the same. The latter is called an **augmented assignment** statement, because it's an assignment statement but it augments the existing value rather than replacing it.
+
+- What do you think the new value of dog will be?
+```
+>>> dog = "woof"
+>>> dog *= 2
+```
+- Solution is: 'woofwoof'.
+
 ### while loops (1/5)
+- A `while` loop will run while some condition is True. As soon as the condition is False, the loop will stop.
+
+```
+>>> password = ''
+>>> while password != 'fizzbuzz':
+...     password = input('Please enter the password: ')
+```
+
+- To make Count Down:
+```
+import time
+
+n = 10
+while n > 0:
+    print(n)
+    n -= 1
+    time.sleep(1)
+print("Blastoff!")
+```
+
 ### Infinite loops and breaking out
+- It's possible to write code that gets stuck in an **infinite loop**! This happens when the condition you set up can only ever be True.
+
+```
+while 2 == 2:
+    # Do something forever and ever without stopping
+```
+- If this happens while you're experimenting in the interpreter, you may have to stop the program. You can do this by pressing Ctrl + C (or in the absolute worst case, you can quit and re-open your terminal).
+
+- There's another way to exit from an infinite loop. Inside a while or for loop, you can use the `break` statement to immediately exit the loop.
+```
+def no_repeating():
+    words = []
+    while True:
+        word = input("Tell me a word: ")
+        if word in words:
+            print("You told me that word already!")
+            break
+        words.append(word)
+    return words
+```
+- A `break` statement will always skip to the end of the innermost while or for loop. If you have a loop inside another loop, it will only exit the inside loop.
+
 ### Finding substrings (1/4)
+- When we search a string for substrings, we'll use index numbers to describe where the substring is found. For instance, if we search for 'ook' in 'cookbook', we'll say that it's found at positions 1 and 5. This means that if we take a slice of length 3 starting from one of these positions, we'll see that substring:
+```
+>>> location = 5
+>>> size = 3
+>>> word[location : location+size]
+ook
+```
+
 ### Finding substrings (2/4)
+- Our first goal will be to write a function, is_substring, that simply checks whether one string is a substring of another. If the first string is a substring of the other, it should return True; otherwise, it should return False.
+```
+def is_substring(substring, string):
+    index = 0
+    while index < len(string):
+        if string[index : index + len(substring)] == substring:
+            return True
+        index += 1
+    return False
+```
+
 ### Finding substrings (3/4)
+- Change `count_character` to `count_substring`:
+```
+def count_character(string, target):
+    index = 0
+    total = 0
+    while index < len(string):
+        if string[index] == target:
+            total += 1
+        index += 1
+    return total
+```
+
+```
+def count_substring(string, target):
+    total = 0
+    index = 0
+    while index < len(string):
+        if string[index : index + len(target)] == target:
+            total += 1
+        index += 1 
+    return total
+		
+# Here's a call you can test it with. This should print 4:
+print(count_substring('love, love, love, all you need is love', 'love'))
+```
+- Overlapping matches: With the solution above, the function counts **overlapping matches**:
+
+```
+>>> count_substring('AAAA', 'AA')
+```
+
+There's one sense in which the answer is `2`, and another sense in which it's `3`. It depends on whether matches are allowed to overlap!
+
+- We can solve the problem by making some modifications inside the function's while loop:
+
+```
+if string[index : index + len(target)] == target:
+    total += 1
+    index += len(target)
+else:
+    index += 1
+```
+- So here's the new version of the function:
+
+```
+def count_substring(string, target):
+    total = 0
+    index = 0
+    while index < len(string):
+        if string[index : index + len(target)] == target:
+            total += 1
+            index += len(target)   # <- This is the key line
+        else:
+            index += 1
+    return total
+```
+
+The new code is saying that if we count a substring, we'll advance the index position forward by len(target) so that we skip over the rest of the characters in the substring.
+
 ### Finding substrings (4/4)
+- Here's one way to write the `locate_first` function. We've only had to change a few things from the `count_substring` function: instead of returning a total, we return the index on a successful match, or the value `-1` on no match:
+
+```
+def locate_first(string, sub): 
+    index = 0
+    while index < len(string):
+        if string[index : index + len(sub)] == sub:
+            return index
+        else:
+            index += 1
+    return -1
+```
+- let's take it one step further and see if we can make a function that locates all instance of a substring:
+
+```
+def locate_all(string, sub):
+    matches = []
+    index = 0
+    while index < len(string):
+        if string[index : index + len(sub)] == sub:
+            matches.append(index)
+            index += len(sub)
+        else:
+            index += 1
+    return matches
+		
+>>> locate_all('cookbook', 'ook')
+[1, 5]
+>>> locate_all('yesyesyes', 'yes')
+[0, 3, 6]
+>>> locate_all('the upside down', 'barb')
+[]
+```
+
 ### More methods on strings
+- Assume that we've got the entire text of the novel A Tale of Two Cities in a string variable called tale:
+- How many times does the word "chocolate" occur in the novel? -> `tale.count("chocolate")`.
+-	Yes or no: Does the word "chocolate" occur in the novel? -> `"chocolate" in tale`.
+-	How far into the novel is the first occurrence of the word "chocolate"? -> `tale.find("chocolate")`.
+
 ### Joining
+- `"joiner".join("str")` -> sepatates the str with the joiner.
+- Write a function breakify that takes a list of strings, and returns a single string with <br> inserted between each two strings in the list:
+```
+def breakify(strings):
+    return "<br>".join(strings)
+```
+
 ### Silly sentences
+- Make silly Random sentense choosen from `words` module :"D :
+
+```
+nouns = ['apple', 'ball', 'cat', 'dog', 'elephant',
+         'fish', 'goat', 'house', 'iceberg', 'jackal',
+         'king', 'llama', 'monkey', 'nurse', 'octopus',
+         'pie', 'queen', 'robot', 'snake', 'tofu',
+         'unicorn', 'vampire', 'wumpus', 'x-ray', 'yak',
+         'zebra']
+
+verbs = ['ate', 'bit', 'caught', 'dropped', 'explained',
+         'fed', 'grabbed', 'hacked', 'inked', 'jumped',
+         'knitted', 'loved', 'made', 'nosed', 'oiled',
+         'puffed', 'quit', 'rushed', 'stung', 'trapped',
+         'uplifted', 'valued', 'wanted']
+
+templates = [
+        'Waiter! I found a {{noun}} in my {{noun}}!',
+        'The {{noun}} {{verb}} the {{noun}}.',
+        'If you {{verb}} the {{noun}}, '
+        'the {{noun}} will get you.',
+        "Let's go: the {{noun}} is {{verb}}.",
+        'Colorless green {{noun}}s {{verb}} furiously.'
+]
+```
+
+- Generate Sentense:
+
+```
+import random
+import words
+
+
+def silly_string(nouns, verbs, templates):
+    # Choose a random template.
+    template = random.choice(templates)
+
+    # We'll append strings into this list for output.
+    output = []
+
+    # Keep track of where in the template string we are.
+    index = 0
+
+    while index < len(template):
+        if template[index:index+8] == '{{noun}}':
+            # Add a random noun to the output.
+            output.append(random.choice(nouns))
+            index += 8
+        elif template[index:index+8] == '{{verb}}':
+            # Add a random verb to the output.
+            output.append(random.choice(verbs))
+            index += 8
+        else:
+            # Copy a character to the output.
+            output.append(template[index])
+            index += 1
+
+    # Join the output into a single string.
+    output = ''.join(output)
+
+    return output
+
+
+if __name__ == '__main__':
+    print(silly_string(words.nouns, words.verbs,
+        words.templates))
+```
 
 
 </details>
